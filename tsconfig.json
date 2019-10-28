@@ -4,7 +4,8 @@
     "strict": true,
     "module": "es2015",
     "moduleResolution": "node",
-    "typeRoots": ["node_modules/@types", "src/types"]
+    "typeRoots": ["node_modules/@types", "src/types"],
+    "esModuleInterop": true
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules/**"]
