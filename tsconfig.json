@@ -5,8 +5,11 @@
     "module": "es2015",
     "moduleResolution": "node",
     "typeRoots": ["node_modules/@types", "src/types"],
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "declaration": true,
+    "declarationDir": "./build",
+    "outDir": "./build"
   },
   "include": ["src/**/*.ts"],
-  "exclude": ["node_modules/**"]
+  "exclude": ["node_modules/**", "**/__mocks__/**", "**/*.spec.ts"]
 }

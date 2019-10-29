@@ -4,8 +4,7 @@ interface IVueTransitionAy11Props {
   reduceMotion: boolean;
 }
 
-export const MEDIA_QUERY_REDUCE_MOTION =
-  'screen and (prefers-reduced-motion: reduce)';
+const MEDIA_QUERY_REDUCE_MOTION = 'screen and (prefers-reduced-motion: reduce)';
 
 export default Vue.component<IVueTransitionAy11Props>('transition-a11y', {
   functional: true,
