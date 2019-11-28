@@ -2,7 +2,7 @@
   "name": "vue-transition-ay11",
   "version": "1.0.0",
   "description": "Vue transition component with a11y considerations",
-  "repository": "https://github.com/vanhoofmaarten/vue-transition-ay11",
+  "repository": "git@github.com:vanhoofmaarten/vue-transition-ay11.git",
   "license": "MIT",
   "keywords": [
     "vue",
@@ -30,7 +30,7 @@
     "version": "standard-version",
     "reset": "git clean -dfx && git reset --hard && npm ci",
     "clean": "trash pkg",
-    "prepare-release": "run-s test doc:html version doc:publish"
+    "release": "run-s test doc:html semantic-release doc:publish"
   },
   "scripts-info": {
     "info": "Display information about the package scripts",
@@ -38,13 +38,11 @@
     "fix": "Try to automatically fix any linting problems",
     "test": "Lint and unit test the project",
     "watch": "Watch and rebuild the project on save, then rerun relevant tests",
-    "cov": "Rebuild, run tests, then create and open the coverage report",
     "doc": "Generate HTML API documentation and open it in a browser",
     "doc:json": "Generate API documentation in typedoc JSON format",
     "version": "Bump package.json version, update CHANGELOG.md, tag release",
     "reset": "Delete all untracked files and reset the repo to the last commit",
-    "prepare-release": "One-step: clean, build, test, publish docs, and prep a release",
-    "pack": "Build package"
+    "release": "One-step: clean, build, test, publish docs, and release a new version"
   },
   "engines": {
     "node": ">=10"
@@ -76,7 +74,7 @@
     "prettier": "^1.18.2",
     "rollup": "^1.26.0",
     "rollup-plugin-typescript2": "^0.25.1",
-    "standard-version": "^6.0.1",
+    "semantic-release": "^15.13.31",
     "trash-cli": "^3.0.0",
     "ts-jest": "^24.1.0",
     "typescript": "^3.5.3",
@@ -119,6 +117,21 @@
       ],
       [
         "@pika/plugin-build-web"
+      ]
+    ]
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      [
+        "@semantic-release/github",
+        {
+          "assets": [
+            "pkg/**"
+          ]
+        }
       ]
     ]
   }
