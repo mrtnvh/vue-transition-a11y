@@ -15,14 +15,13 @@
   ],
   "scripts": {
     "describe": "npm-scripts-info",
-    "build": "trash pkg && pika build",
+    "build": "pika build",
     "fix": "run-s fix:*",
     "fix:prettier": "prettier \"src/**/*.ts\" --write",
     "fix:eslint": "eslint --fix src/**/*",
     "test": "run-s test:*",
     "test:lint": "eslint src/**/* && prettier \"src/**/*.ts\" --list-different",
     "test:unit": "jest",
-    "watch": "run-s clean build:main && run-p \"build:main -- -w\" \"test:unit -- --watch\"",
     "doc": "run-s doc:html && open-cli docs/index.html",
     "doc:html": "typedoc src/ --exclude **/*.spec.ts --exclude **/__mocks__/*.* --target ES6 --mode file --out docs",
     "doc:json": "typedoc src/ --exclude **/*.spec.ts --exclude **/__mocks__/*.* --target ES6 --mode file --json docs/typedoc.json",
@@ -30,7 +29,7 @@
     "version": "standard-version",
     "reset": "git clean -dfx && git reset --hard && npm ci",
     "clean": "trash pkg",
-    "release": "run-s test doc:html semantic-release doc:publish"
+    "release": "run-s clean build test doc:html semantic-release doc:publish"
   },
   "scripts-info": {
     "info": "Display information about the package scripts",
