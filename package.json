@@ -1,165 +1,165 @@
 {
-	"name": "vue-transition-ay11",
-	"version": "1.0.0",
-	"description": "Vue transition component with a11y considerations",
-	"repository": "git@github.com:vanhoofmaarten/vue-transition-ay11.git",
-	"license": "MIT",
-	"keywords": [
-		"vue",
-		"typescript",
-		"animation",
-		"transition",
-		"a11y",
-		"accessibility",
-		"prefers-reduce-motion"
-	],
-	"scripts": {
-		"describe": "npm-scripts-info",
-		"build": "pika build",
-		"fix": "run-s fix:*",
-		"fix:prettier": "prettier \"src/**/*.ts\" --write",
-		"fix:eslint": "eslint --fix src/**/*",
-		"test": "run-s test:*",
-		"test:lint": "eslint src/**/* && prettier \"src/**/*.ts\" --list-different",
-		"test:unit": "jest",
-		"doc": "run-s doc:html && open-cli docs/index.html",
-		"doc:html": "typedoc src/ --exclude **/*.spec.ts --exclude **/__mocks__/*.* --target ES6 --mode file --out docs",
-		"doc:json": "typedoc src/ --exclude **/*.spec.ts --exclude **/__mocks__/*.* --target ES6 --mode file --json docs/typedoc.json",
-		"doc:publish": "gh-pages -m \"[ci skip] Updates\" -d docs",
-		"version": "standard-version",
-		"reset": "git clean -dfx && git reset --hard && npm ci",
-		"clean": "trash pkg",
-		"release": "run-s clean build test doc:html semantic-release doc:publish"
-	},
-	"scripts-info": {
-		"info": "Display information about the package scripts",
-		"build": "Clean and rebuild the project",
-		"fix": "Try to automatically fix any linting problems",
-		"test": "Lint and unit test the project",
-		"watch": "Watch and rebuild the project on save, then rerun relevant tests",
-		"doc": "Generate HTML API documentation and open it in a browser",
-		"doc:json": "Generate API documentation in typedoc JSON format",
-		"version": "Bump package.json version, update CHANGELOG.md, tag release",
-		"reset": "Delete all untracked files and reset the repo to the last commit",
-		"release": "One-step: clean, build, test, publish docs, and release a new version"
-	},
-	"engines": {
-		"node": ">=10"
-	},
-	"dependencies": {},
-	"devDependencies": {
-		"@bitjson/npm-scripts-info": "^1.0.0",
-		"@bitjson/typedoc": "^0.15.0-0",
-		"@pika/pack": "^0.5.0",
-		"@pika/plugin-build-node": "^0.8.1",
-		"@pika/plugin-build-web": "^0.8.1",
-		"@pika/plugin-ts-standard-pkg": "^0.8.1",
-		"@semantic-release/changelog": "^3.0.6",
-		"@testing-library/vue": "^4.1.0",
-		"@types/jest": "^24.0.19",
-		"@typescript-eslint/eslint-plugin": "^2.5.0",
-		"@vue/server-test-utils": "^1.0.0-beta.29",
-		"@vue/test-utils": "^1.0.0-beta.29",
-		"cz-conventional-changelog": "^2.1.0",
-		"eslint": "^6.5.1",
-		"eslint-config-airbnb-typescript": "^6.0.0",
-		"eslint-config-prettier": "^6.4.0",
-		"eslint-plugin-import": "^2.18.2",
-		"eslint-plugin-jest": "^22.20.0",
-		"eslint-plugin-prettier": "^3.1.1",
-		"gh-pages": "^2.0.1",
-		"jest": "^24.9.0",
-		"npm-run-all": "^4.1.5",
-		"open-cli": "^5.0.0",
-		"prettier": "^1.18.2",
-		"rollup": "^1.26.0",
-		"rollup-plugin-typescript2": "^0.25.1",
-		"semantic-release": "^16.0.0-beta.38",
-		"trash-cli": "^3.0.0",
-		"ts-jest": "^24.1.0",
-		"typescript": "^3.5.3",
-		"vue": "^2.6.10",
-		"vue-server-renderer": "^2.6.10",
-		"vue-template-compiler": "^2.6.10"
-	},
-	"peerDependencies": {
-		"vue": "2.x"
-	},
-	"jest": {
-		"roots": [
-			"<rootDir>/src"
-		],
-		"transform": {
-			"^.+\\.tsx?$": "ts-jest"
-		},
-		"collectCoverage": true,
-		"coverageThreshold": {
-			"global": {
-				"branches": 80,
-				"functions": 80,
-				"lines": 80,
-				"statements": -10
-			}
-		}
-	},
-	"config": {
-		"commitizen": {
-			"path": "cz-conventional-changelog"
-		}
-	},
-	"@pika/pack": {
-		"pipeline": [
-			[
-				"@pika/plugin-ts-standard-pkg"
-			],
-			[
-				"@pika/plugin-build-node"
-			],
-			[
-				"@pika/plugin-build-web"
-			]
-		]
-	},
-	"release": {
-		"branches": [
-			{
-				"name": "master"
-			},
-			{
-				"name": "pre/rc",
-				"channel": "pre/rc",
-				"prerelease": "rc"
-			},
-			{
-				"name": "beta",
-				"channel": "beta",
-				"prerelease": "beta"
-			}
-		],
-		"plugins": [
-			"@semantic-release/commit-analyzer",
-			"@semantic-release/release-notes-generator",
-			[
-				"@semantic-release/changelog",
-				{
-					"changelogFile": "CHANGELOG.md"
-				}
-			],
-			[
-				"@semantic-release/changelog",
-				{
-					"changelogFile": "pkg/CHANGELOG.md"
-				}
-			],
-			"@semantic-release/npm",
-			[
-				"@semantic-release/github",
-				{
-					"assets": [
-						"pkg/**"
-					]
-				}
-			]
-		]
-	}
+  "name": "vue-transition-ay11",
+  "version": "0.1.0",
+  "description": "Vue transition component with a11y considerations",
+  "repository": "git@github.com:vanhoofmaarten/vue-transition-ay11.git",
+  "license": "MIT",
+  "keywords": [
+    "vue",
+    "typescript",
+    "animation",
+    "transition",
+    "a11y",
+    "accessibility",
+    "prefers-reduce-motion"
+  ],
+  "scripts": {
+    "describe": "npm-scripts-info",
+    "build": "pika build",
+    "fix": "run-s fix:*",
+    "fix:prettier": "prettier \"src/**/*.ts\" --write",
+    "fix:eslint": "eslint --fix src/**/*",
+    "test": "run-s test:*",
+    "test:lint": "eslint src/**/* && prettier \"src/**/*.ts\" --list-different",
+    "test:unit": "jest",
+    "doc": "run-s doc:html && open-cli docs/index.html",
+    "doc:html": "typedoc src/ --exclude **/*.spec.ts --exclude **/__mocks__/*.* --target ES6 --mode file --out docs",
+    "doc:json": "typedoc src/ --exclude **/*.spec.ts --exclude **/__mocks__/*.* --target ES6 --mode file --json docs/typedoc.json",
+    "doc:publish": "gh-pages -m \"[ci skip] Updates\" -d docs",
+    "version": "standard-version",
+    "reset": "git clean -dfx && git reset --hard && npm ci",
+    "clean": "trash pkg",
+    "release": "run-s clean build test doc:html semantic-release doc:publish"
+  },
+  "scripts-info": {
+    "info": "Display information about the package scripts",
+    "build": "Clean and rebuild the project",
+    "fix": "Try to automatically fix any linting problems",
+    "test": "Lint and unit test the project",
+    "watch": "Watch and rebuild the project on save, then rerun relevant tests",
+    "doc": "Generate HTML API documentation and open it in a browser",
+    "doc:json": "Generate API documentation in typedoc JSON format",
+    "version": "Bump package.json version, update CHANGELOG.md, tag release",
+    "reset": "Delete all untracked files and reset the repo to the last commit",
+    "release": "One-step: clean, build, test, publish docs, and release a new version"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@bitjson/npm-scripts-info": "^1.0.0",
+    "@bitjson/typedoc": "^0.15.0-0",
+    "@pika/pack": "^0.5.0",
+    "@pika/plugin-build-node": "^0.8.1",
+    "@pika/plugin-build-web": "^0.8.1",
+    "@pika/plugin-ts-standard-pkg": "^0.8.1",
+    "@semantic-release/changelog": "^3.0.6",
+    "@testing-library/vue": "^4.1.0",
+    "@types/jest": "^24.0.19",
+    "@typescript-eslint/eslint-plugin": "^2.5.0",
+    "@vue/server-test-utils": "^1.0.0-beta.29",
+    "@vue/test-utils": "^1.0.0-beta.29",
+    "cz-conventional-changelog": "^2.1.0",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb-typescript": "^6.0.0",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.20.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "gh-pages": "^2.0.1",
+    "jest": "^24.9.0",
+    "npm-run-all": "^4.1.5",
+    "open-cli": "^5.0.0",
+    "prettier": "^1.18.2",
+    "rollup": "^1.26.0",
+    "rollup-plugin-typescript2": "^0.25.1",
+    "semantic-release": "^16.0.0-beta.38",
+    "trash-cli": "^3.0.0",
+    "ts-jest": "^24.1.0",
+    "typescript": "^3.5.3",
+    "vue": "^2.6.10",
+    "vue-server-renderer": "^2.6.10",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "peerDependencies": {
+    "vue": "2.x"
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "collectCoverage": true,
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": -10
+      }
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "@pika/pack": {
+    "pipeline": [
+      [
+        "@pika/plugin-ts-standard-pkg"
+      ],
+      [
+        "@pika/plugin-build-node"
+      ],
+      [
+        "@pika/plugin-build-web"
+      ]
+    ]
+  },
+  "release": {
+    "branches": [
+      {
+        "name": "master"
+      },
+      {
+        "name": "pre/rc",
+        "channel": "pre/rc",
+        "prerelease": "rc"
+      },
+      {
+        "name": "beta",
+        "channel": "beta",
+        "prerelease": "beta"
+      }
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogFile": "CHANGELOG.md"
+        }
+      ],
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogFile": "pkg/CHANGELOG.md"
+        }
+      ],
+      "@semantic-release/npm",
+      [
+        "@semantic-release/github",
+        {
+          "assets": [
+            "pkg/**"
+          ]
+        }
+      ]
+    ]
+  }
 }
