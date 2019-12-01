@@ -4,6 +4,9 @@
   "description": "Vue transition component with a11y considerations",
   "repository": "git@github.com:vanhoofmaarten/vue-transition-ay11.git",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "vue",
     "typescript",
