@@ -1,0 +1,24 @@
+{
+  "name": "with-nuxt",
+  "version": "1.0.0",
+  "description": "Example project with Nuxt.js and vue-transition-ay11",
+  "author": "Maarten Van Hoof",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "nuxt": "^2.0.0",
+    "vue-transition-ay11": "^1.0.0"
+  },
+  "devDependencies": {
+    "relative-deps": "^0.2.0"
+  },
+  "prepare": "npm run relative-deps",
+  "relativeDependencies": {
+    "vue-transition-ay11": "../../pkg"
+  }
+}
