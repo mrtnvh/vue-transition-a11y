@@ -1,9 +1,12 @@
 {
-  "name": "vue-transition-ay11",
-  "version": "1.0.0",
+  "name": "vue-transition-a11y",
+  "version": "0.1.0",
   "description": "Vue transition component with a11y considerations",
-  "repository": "git@github.com:vanhoofmaarten/vue-transition-ay11.git",
+  "repository": "git@github.com:vanhoofmaarten/vue-transition-a11y.git",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "vue",
     "typescript",
@@ -26,7 +29,6 @@
     "doc:html": "typedoc src/ --exclude **/*.spec.ts --exclude **/__mocks__/*.* --target ES6 --mode file --out docs",
     "doc:json": "typedoc src/ --exclude **/*.spec.ts --exclude **/__mocks__/*.* --target ES6 --mode file --json docs/typedoc.json",
     "doc:publish": "gh-pages -m \"[ci skip] Updates\" -d docs",
-    "version": "standard-version",
     "reset": "git clean -dfx && git reset --hard && npm ci",
     "clean": "trash pkg",
     "release": "run-s clean build test doc:html semantic-release doc:publish"
@@ -39,7 +41,6 @@
     "watch": "Watch and rebuild the project on save, then rerun relevant tests",
     "doc": "Generate HTML API documentation and open it in a browser",
     "doc:json": "Generate API documentation in typedoc JSON format",
-    "version": "Bump package.json version, update CHANGELOG.md, tag release",
     "reset": "Delete all untracked files and reset the repo to the last commit",
     "release": "One-step: clean, build, test, publish docs, and release a new version"
   },
@@ -54,6 +55,7 @@
     "@pika/plugin-build-node": "^0.8.1",
     "@pika/plugin-build-web": "^0.8.1",
     "@pika/plugin-ts-standard-pkg": "^0.8.1",
+    "@semantic-release/changelog": "^3.0.6",
     "@testing-library/vue": "^4.1.0",
     "@types/jest": "^24.0.19",
     "@typescript-eslint/eslint-plugin": "^2.5.0",
@@ -73,7 +75,7 @@
     "prettier": "^1.18.2",
     "rollup": "^1.26.0",
     "rollup-plugin-typescript2": "^0.25.1",
-    "semantic-release": "^15.13.31",
+    "semantic-release": "^16.0.0-beta.38",
     "trash-cli": "^3.0.0",
     "ts-jest": "^24.1.0",
     "typescript": "^3.5.3",
@@ -123,6 +125,18 @@
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogFile": "CHANGELOG.md"
+        }
+      ],
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogFile": "pkg/CHANGELOG.md"
+        }
+      ],
       "@semantic-release/npm",
       [
         "@semantic-release/github",

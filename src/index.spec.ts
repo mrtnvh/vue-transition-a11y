@@ -1,6 +1,6 @@
 import { mount, config } from '@vue/test-utils';
 import { renderToString } from '@vue/server-test-utils';
-import TransitionAy11 from './index';
+import Transitiona11y from './index';
 import Child, { TEXT } from './__mocks__/ChildComponent';
 import mockWindowMatchMedia from './__mocks__/matchMedia';
 
@@ -13,7 +13,7 @@ describe('Without reduced motion', () => {
   });
 
   test('It renders transition component', () => {
-    const wrapper = mount(TransitionAy11, {
+    const wrapper = mount(Transitiona11y, {
       context: {
         props: {
           name: 'fade',
@@ -36,7 +36,7 @@ describe('With reduced motion', () => {
   });
 
   test('It does not render a transition component', () => {
-    const wrapper = mount(TransitionAy11, {
+    const wrapper = mount(Transitiona11y, {
       context: {
         props: {
           name: 'fade',
@@ -55,7 +55,7 @@ describe('With reduced motion', () => {
 
 describe('SSR', () => {
   test('It renders transition component', () => {
-    const wrapper = renderToString(TransitionAy11, {
+    const wrapper = renderToString(Transitiona11y, {
       context: {
         props: {
           name: 'fade',

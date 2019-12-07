@@ -1,3 +1,3 @@
-# vue-transition-ay11
+# vue-transition-a11y
 
 Vue transition component with a11y considerations

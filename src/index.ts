@@ -1,12 +1,12 @@
 import Vue from 'vue';
 
-interface IVueTransitionAy11Props {
+interface IVueTransitiona11yProps {
   reduceMotion: boolean;
 }
 
 const MEDIA_QUERY_REDUCE_MOTION = 'screen and (prefers-reduced-motion: reduce)';
 
-export default Vue.component<IVueTransitionAy11Props>('transition-a11y', {
+export default Vue.component<IVueTransitiona11yProps>('transition-a11y', {
   functional: true,
   props: {
     reduceMotion: {
