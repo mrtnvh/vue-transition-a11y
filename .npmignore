@@ -1,3 +1,4 @@
+docs
 src
 test
 tsconfig.json
@@ -9,5 +10,8 @@ tslint.json
 .vscode
 **/*.spec.*
 coverage
-.nyc_output
 *.log
+.editorconfig
+.eslintignore
+.eslintrc.js
+.prettierrc
