@@ -5,16 +5,18 @@
   "author": "Maarten Van Hoof",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate"
+    "dev": "nuxt-ts",
+    "build": "nuxt-ts build",
+    "generate": "nuxt-ts generate",
+    "start": "nuxt-ts start"
   },
   "dependencies": {
+    "@nuxt/typescript-runtime": "^0.2.10",
     "nuxt": "^2.0.0",
     "vue-transition-ay11": "^1.0.0"
   },
   "devDependencies": {
+    "@nuxt/typescript-build": "^0.3.10",
     "relative-deps": "^0.2.0"
   },
   "prepare": "npm run relative-deps",

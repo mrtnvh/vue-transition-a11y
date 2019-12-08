@@ -30,6 +30,7 @@
 
 <script>
 import Logo from '~/components/Logo.vue'
+import Transition from 'vue-transition-a11y'
 
 export default {
   components: {
