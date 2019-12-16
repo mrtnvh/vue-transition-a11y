@@ -1,0 +1,27 @@
+{
+  "name": "with-nuxt",
+  "version": "1.0.0",
+  "description": "Example project with Nuxt.js and vue-transition-a11y",
+  "author": "Maarten Van Hoof",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt-ts",
+    "build": "nuxt-ts build",
+    "generate": "nuxt-ts generate",
+    "start": "nuxt-ts start",
+    "postinstall": "relative-deps"
+  },
+  "dependencies": {
+    "@nuxt/typescript-runtime": "^0.3.2",
+    "nuxt": "^2.10.2",
+    "vue-transition-a11y": "^1.0.0-beta"
+  },
+  "devDependencies": {
+    "@nuxt/typescript-build": "^0.5.1",
+    "relative-deps": "^0.2.0"
+  },
+  "prepare": "npm run relative-deps",
+  "relativeDependencies": {
+    "vue-transition-a11y": "../../"
+  }
+}

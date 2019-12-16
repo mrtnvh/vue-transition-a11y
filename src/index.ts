@@ -14,9 +14,8 @@ export default Vue.component<IVueTransitiona11yProps>('transition-a11y', {
     },
   },
   render: (h, { data, props: { reduceMotion }, children }) => {
-    const matchMedia = window && window.matchMedia(MEDIA_QUERY_REDUCE_MOTION);
-    return reduceMotion && matchMedia.matches
-      ? children
-      : h('transition', data, children);
+    if (typeof window === 'undefined') return children;
+    const { matches = false } = window.matchMedia(MEDIA_QUERY_REDUCE_MOTION);
+    return reduceMotion && matches ? children : h('transition', data, children);
   },
 });
