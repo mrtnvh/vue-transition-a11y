@@ -1,42 +1,39 @@
 <template>
   <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        with-nuxt
-      </h1>
-      <h2 class="subtitle">
-        Example project with Nuxt.js and vue-transition-ay11
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+    <TransitionA11y appear name="fade">
+      <div v-if="loaded">
+        <logo />
+        <h1 class="title">with-nuxt</h1>
+        <h2 class="subtitle">Example project with Nuxt.js and vue-transition-ay11</h2>
+        <div class="links">
+          <a href="https://nuxtjs.org/" target="_blank" class="button--green">Documentation</a>
+          <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">GitHub</a>
+        </div>
       </div>
-    </div>
+    </TransitionA11y>
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import Transition from 'vue-transition-a11y'
+import Logo from '~/components/Logo.vue';
+import Transition from 'vue-transition-a11y';
 
 export default {
+  data() {
+    return {
+      loaded: false,
+    };
+  },
+
   components: {
-    Logo
-  }
-}
+    Logo,
+    TransitionA11y: Transition,
+  },
+
+  mounted() {
+    this.loaded = true;
+  },
+};
 </script>
 
 <style>
@@ -44,6 +41,7 @@ export default {
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -69,5 +67,15 @@ export default {
 
 .links {
   padding-top: 15px;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 5s;
+  opacity: 1;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
