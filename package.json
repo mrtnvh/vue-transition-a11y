@@ -16,6 +16,10 @@
     "accessibility",
     "prefers-reduce-motion"
   ],
+  "source": "pkg/dist-src/index.js",
+  "types": "pkg/dist-types/index.d.ts",
+  "main": "pkg/dist-node/index.js",
+  "module": "pkg/dist-web/index.js",
   "scripts": {
     "describe": "npm-scripts-info",
     "build": "pika build",
@@ -78,7 +82,7 @@
     "semantic-release": "^16.0.0-beta.38",
     "trash-cli": "^3.0.0",
     "ts-jest": "^24.1.0",
-    "typescript": "^3.5.3",
+    "typescript": "3.7",
     "vue": "^2.6.10",
     "vue-server-renderer": "^2.6.10",
     "vue-template-compiler": "^2.6.10"
