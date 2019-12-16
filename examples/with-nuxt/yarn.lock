@@ -7289,7 +7289,7 @@ vue-template-es2015-compiler@^1.9.0:
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
 
 vue-transition-a11y@^1.0.0-beta:
-  version "1.0.0-beta"
+  version "1.0.0-beta.2"
   resolved "https://registry.yarnpkg.com/vue-transition-a11y/-/vue-transition-a11y-1.0.0-beta.tgz#d89728f44bbb482d671bd704d0b15ce56aebe248"
   integrity sha512-enXa0r10C6/k2UuvNTcQj6lTugzAbBjf6OCUfFo80SEIWC2taFyIVR7PFjbhuNBamcNpnEaa2ByNSQM66agIuw==
 
