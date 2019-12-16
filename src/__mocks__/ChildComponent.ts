@@ -5,7 +5,7 @@ export const TEXT = 'This is a test';
 export const HTML = `<span>${TEXT}</span>`;
 
 export default Vue.component('Child', {
-  propsData: {
+  props: {
     childProp: {
       default: 'This is a child prop',
     },
