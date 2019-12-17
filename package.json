@@ -36,7 +36,7 @@
     "reset": "git clean -dfx && git reset --hard && npm ci",
     "clean": "trash pkg",
     "release": "run-s clean build test doc:html semantic-release doc:publish",
-    "prepublish": "run-s clean build test doc:html doc:publish"
+    "prepublishOnly": "run-s clean build test doc:html doc:publish"
   },
   "scripts-info": {
     "info": "Display information about the package scripts",
