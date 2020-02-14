@@ -7,4 +7,7 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:jest/recommended',
   ],
+  parserOptions: {
+    project: ['./tsconfig.base.json'],
+  },
 };
