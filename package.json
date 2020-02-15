@@ -34,7 +34,7 @@
     "doc:json": "typedoc src/ --exclude **/*.spec.ts --exclude **/__mocks__/*.* --target ES6 --mode file --json docs/typedoc.json",
     "doc:publish": "gh-pages -m \"[ci skip] Updates\" -d docs",
     "reset": "git clean -dfx && git reset --hard && npm ci",
-    "clean": "trash pkg",
+    "clean": "rimraf pkg",
     "semantic-release": "semantic-release",
     "release": "run-s clean build test doc:html semantic-release doc:publish",
     "prepublishOnly": "run-s clean build test doc:html doc:publish"
