@@ -35,6 +35,7 @@
     "doc:publish": "gh-pages -m \"[ci skip] Updates\" -d docs",
     "reset": "git clean -dfx && git reset --hard && npm ci",
     "clean": "trash pkg",
+    "semantic-release": "semantic-release",
     "release": "run-s clean build test doc:html semantic-release doc:publish",
     "prepublishOnly": "run-s clean build test doc:html doc:publish"
   },
@@ -121,7 +122,8 @@
   "@pika/pack": {
     "pipeline": [
       [
-        "@pika/plugin-ts-standard-pkg", {
+        "@pika/plugin-ts-standard-pkg",
+        {
           "tsconfig": "./tsconfig.base.json"
         }
       ],
