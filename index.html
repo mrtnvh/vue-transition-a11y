@@ -67,7 +67,164 @@
 				<a href="#vue-transition-a11y" id="vue-transition-a11y" style="color: inherit; text-decoration: none;">
 					<h1>vue-transition-a11y</h1>
 				</a>
-				<p>Vue transition component with a11y considerations</p>
+				<p><a href="https://vanhoofmaarten.github.io/vue-transition-a11y/">https://vanhoofmaarten.github.io/vue-transition-a11y/</a></p>
+				<p>Vue transition component with a11y considerations.</p>
+				<ul>
+					<li><a href="#vue-transition-a11y">vue-transition-a11y</a><ul>
+							<li><a href="#problem">Problem</a></li>
+							<li><a href="#solution">Solution</a></li>
+							<li><a href="#api">API</a><ul>
+									<li><a href="#props">Props</a></li>
+									<li><a href="#usage">Usage</a></li>
+								</ul>
+							</li>
+							<li><a href="#license">License</a></li>
+						</ul>
+					</li>
+				</ul>
+				<a href="#problem" id="problem" style="color: inherit; text-decoration: none;">
+					<h2>Problem</h2>
+				</a>
+				<p>When using the Vue <code>transitions</code> component with <a href="https://vuejs.org/v2/guide/transitions.html#CSS-Transitions">CSS transitions</a> or <a href="https://vuejs.org/v2/guide/transitions.html#CSS-Animations">CSS Animations</a>, it&#39;s pretty easy to disable these for users who prefer this.</p>
+				<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">transition</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"slide-fade"</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- ... --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span></code></pre>
+				<p>Transitions</p>
+				<pre><code class="language-css"><span class="hljs-selector-class">.slide-fade-enter-active</span>,
+<span class="hljs-selector-class">.slide-fade-leave-active</span> {
+  <span class="hljs-attribute">transition</span>: all <span class="hljs-number">0.3s</span> ease;
+}
+
+<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">prefers-reduced-motion:</span> reduce) {
+  <span class="hljs-selector-class">.slide-fade-enter-active</span>,
+  <span class="hljs-selector-class">.slide-fade-leave-active</span> {
+    <span class="hljs-attribute">transition</span>: none;
+  }
+}</code></pre>
+				<p>Animations</p>
+				<pre><code class="language-css"><span class="hljs-selector-class">.slide-fade-enter-active</span>,
+<span class="hljs-selector-class">.slide-fade-leave-active</span> {
+  <span class="hljs-attribute">animation</span>: bounce-in <span class="hljs-number">0.5s</span>;
+}
+
+<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">prefers-reduced-motion:</span> reduce) {
+  <span class="hljs-selector-class">.slide-fade-enter-active</span>,
+  <span class="hljs-selector-class">.slide-fade-leave-active</span> {
+    <span class="hljs-attribute">animation</span>: none;
+  }
+}
+
+<span class="hljs-keyword">@keyframes</span> bounce-in {
+  0% {
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">scale</span>(<span class="hljs-number">0</span>);
+  }
+  50% {
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">scale</span>(<span class="hljs-number">1.5</span>);
+  }
+  100% {
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">scale</span>(<span class="hljs-number">1</span>);
+  }
+}</code></pre>
+				<p>Globally</p>
+				<pre><code class="language-css"><span class="hljs-keyword">@media</span> (<span class="hljs-attribute">prefers-reduced-motion:</span> reduce) {
+  * {
+    <span class="hljs-attribute">animation</span>: none <span class="hljs-meta">!important</span>;
+    <span class="hljs-attribute">transition</span>: none <span class="hljs-meta">!important</span>;
+  }
+}</code></pre>
+				<p>But when using <a href="JavaScript-Hooks">JavaScript Hooks</a>, things get a little more complicated.</p>
+				<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">transition</span>
+  <span class="hljs-attr">v-on:before-enter</span>=<span class="hljs-string">"beforeEnter"</span>
+  <span class="hljs-attr">v-on:enter</span>=<span class="hljs-string">"enter"</span>
+  <span class="hljs-attr">v-on:after-enter</span>=<span class="hljs-string">"afterEnter"</span>
+  <span class="hljs-attr">v-on:enter-cancelled</span>=<span class="hljs-string">"enterCancelled"</span>
+  <span class="hljs-attr">v-on:before-leave</span>=<span class="hljs-string">"beforeLeave"</span>
+  <span class="hljs-attr">v-on:leave</span>=<span class="hljs-string">"leave"</span>
+  <span class="hljs-attr">v-on:after-leave</span>=<span class="hljs-string">"afterLeave"</span>
+  <span class="hljs-attr">v-on:leave-cancelled</span>=<span class="hljs-string">"leaveCancelled"</span>
+&gt;</span>
+  <span class="hljs-comment">&lt;!-- ... --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span></code></pre>
+				<pre><code class="language-js"><span class="hljs-comment">// ...</span>
+<span class="hljs-attr">methods</span>: {
+  beforeEnter(el) {
+    <span class="hljs-comment">// ...</span>
+  },
+  enter(el, done) {
+    <span class="hljs-comment">// ...</span>
+    done()
+  },
+  afterEnter(el) {
+    <span class="hljs-comment">// ...</span>
+  },
+  enterCancelled(el) {
+    <span class="hljs-comment">// ...</span>
+  },
+  beforeLeave(el) {
+    <span class="hljs-comment">// ...</span>
+  },
+  leave(el, done) {
+    <span class="hljs-comment">// ...</span>
+    done()
+  },
+  afterLeave(el) {
+    <span class="hljs-comment">// ...</span>
+  },
+  leaveCancelled(el) {
+    <span class="hljs-comment">// ...</span>
+  }
+}</code></pre>
+				<p>Where in all of these functions are you going to disable your complex animations?</p>
+				<p>Using the <code>window.matchMedia</code> functionality, you could check if the user&#39;s preferences.</p>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> prefersReducedMotion = <span class="hljs-built_in">window</span>.matchMedia(
+  <span class="hljs-string">'screen and (prefers-reduced-motion: reduce)'</span>,
+).matches;
+
+<span class="hljs-comment">// Stop every animation method if prefersReducedMotion === false</span></code></pre>
+				<p>A bit over the top, don&#39;t you think?</p>
+				<a href="#solution" id="solution" style="color: inherit; text-decoration: none;">
+					<h2>Solution</h2>
+				</a>
+				<p>To tackle this problem and enable Vue developers to make complex, re-usable and <strong>accessible</strong> transitions and animations with the transition component, I&#39;ve created this component.</p>
+				<p>What is does is very simple. If the user <strong>prefers reduced motion, don&#39;t render the transition component</strong>. If not, render it.</p>
+				<p>This way, JavaScript Hooks aren&#39;t called when unnecessary</p>
+				<p>Easy.</p>
+				<a href="#api" id="api" style="color: inherit; text-decoration: none;">
+					<h2>API</h2>
+				</a>
+				<p>The <code>vue-transition-a11y</code> components API extends the standard <a href="https://vuejs.org/v2/api/#transition">Vue <code>transition</code> API</a>.</p>
+				<a href="#props" id="props" style="color: inherit; text-decoration: none;">
+					<h3>Props</h3>
+				</a>
+				<table>
+					<thead>
+						<tr>
+							<th>Prop</th>
+							<th>Default value</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td>reduceMotion</td>
+							<td><code>true</code></td>
+							<td>Take the <code>prefers-reduced-motion: reduce</code> media query in to account.</td>
+						</tr>
+				</tbody></table>
+				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+					<h3>Usage</h3>
+				</a>
+				<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"outer"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">transition-a11y</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"inner"</span>&gt;</span>
+      <span class="hljs-comment">&lt;!-- ... --&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">transition-a11y</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
+					<h2>License</h2>
+				</a>
+				<p><a href="https://github.com/vanhoofmaarten/vue-transition-a11y/blob/master/LICENSE">MIT</a></p>
+				<p>Copyright (c) 2020 Maarten Van Hoof</p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
