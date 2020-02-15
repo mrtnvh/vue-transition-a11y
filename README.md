@@ -1,11 +1,16 @@
 # vue-transition-a11y
 
+https://vanhoofmaarten.github.io/vue-transition-a11y/
+
 Vue transition component with a11y considerations.
 
-- Problem
-- Solution
-- API
-- Contributing
+- [vue-transition-a11y](#vue-transition-a11y)
+  - [Problem](#problem)
+  - [Solution](#solution)
+  - [API](#api)
+    - [Props](#props)
+    - [Usage](#usage)
+  - [License](#license)
 
 ## Problem
 
