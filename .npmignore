@@ -16,3 +16,5 @@ coverage
 .eslintrc.js
 .prettierrc
 examples
+*.zip
+*.tar.gz
