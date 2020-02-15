@@ -171,4 +171,4 @@ The `vue-transition-a11y` components API extends the standard [Vue `transition` 
 
 [MIT](https://github.com/vanhoofmaarten/vue-transition-a11y/blob/master/LICENSE)
 
-Copyright (c) 2019 Maarten Van Hoof
+Copyright (c) 2020 Maarten Van Hoof
