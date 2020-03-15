@@ -26,7 +26,7 @@ jobs:
 
       - name: Dry run Semantic release
         id: semantic
-        uses: vanhoofmaarten/semantic-release-action@feature/release-notes
+        uses: cycjimmy/semantic-release-action@v2
         with:
           branch: master
           extra_plugins: |
