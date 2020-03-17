@@ -23,6 +23,7 @@ jobs:
         id: semantic
         uses: cycjimmy/semantic-release-action@v2
         with:
+          branch: develop
           dry_run: true
           extra_plugins: |
             @semantic-release/changelog
