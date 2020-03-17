@@ -19,11 +19,10 @@ jobs:
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
 
-      - name: Dry run Semantic release
+      - name: Dry run Semantic Release
         id: semantic
         uses: cycjimmy/semantic-release-action@v2
         with:
-          branch: feat/automatic-release
           dry_run: true
           extra_plugins: |
             @semantic-release/changelog

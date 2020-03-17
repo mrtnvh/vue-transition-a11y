@@ -24,7 +24,7 @@ jobs:
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
 
-      - name: Dry run Semantic release
+      - name: Run Semantic Release
         id: semantic
         uses: cycjimmy/semantic-release-action@v2
         with:
