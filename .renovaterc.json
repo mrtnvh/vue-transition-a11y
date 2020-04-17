@@ -1,0 +1,13 @@
+{
+  "assignees": ["vanhoofmaarten"],
+  "automerge": true,
+  "schedule": "before 3am on Monday",
+  "extends": [
+    "config:base",
+    "group:allNonMajor",
+    ":semanticCommitTypeAll(chore)"
+  ],
+  "npm": {
+    "commitMessageTopic": "{{prettyDepType}} {{depName}}"
+  }
+}
