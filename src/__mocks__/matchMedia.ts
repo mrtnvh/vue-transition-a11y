@@ -1,5 +1,5 @@
 export default (matches: boolean = true) => {
-  window.matchMedia = jest.fn().mockImplementation(query => ({
+  window.matchMedia = jest.fn().mockImplementation((query) => ({
     matches,
     media: query,
     onchange: null,
