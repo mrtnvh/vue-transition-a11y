@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/vanhoofmaarten/vue-transition-a11y/compare/v1.0.0...v1.0.1) (2020-04-21)
+
+
+### Bug Fixes
+
+* **build:** Use correct tsconfig for production build ([ae7aa0f](https://github.com/vanhoofmaarten/vue-transition-a11y/commit/ae7aa0f9b9c8dcd8235a0c00766e9561ede1e2f7))
+
 # 1.0.0 (2020-02-15)
 
 
