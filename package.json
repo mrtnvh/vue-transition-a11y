@@ -38,9 +38,7 @@
     "clean": "rimraf pkg",
     "semantic-release": "semantic-release",
     "release": "run-s clean build test doc:html semantic-release doc:publish",
-    "prepublishOnly": "run-s clean build test doc:html doc:publish",
-    "beforepublish": "run-s clean build",
-    "afterpublish": "doc:html doc:publish"
+    "prepublishOnly": "run-s clean build test doc:html"
   },
   "scripts-info": {
     "info": "Display information about the package scripts",
