@@ -24,6 +24,9 @@ jobs:
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
 
+      - name: Before publish
+        run: 'yarn beforepublish'
+
       - name: Run Semantic Release
         id: semantic
         uses: cycjimmy/semantic-release-action@v2
@@ -36,3 +39,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: after publish
+        run: 'yarn afterpublish'
