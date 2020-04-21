@@ -38,7 +38,8 @@
     "clean": "rimraf pkg",
     "semantic-release": "semantic-release",
     "release": "run-s clean build test doc:html semantic-release doc:publish",
-    "prepublishOnly": "run-s clean build test doc:html"
+    "publish:changelog": "cp CHANGELOG.md pkg/CHANGELOG.md",
+    "prepublishOnly": "run-s clean build test doc:html publish:changelog"
   },
   "scripts-info": {
     "info": "Display information about the package scripts",
