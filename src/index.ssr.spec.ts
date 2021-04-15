@@ -11,11 +11,12 @@ import Child, { TEXT } from './__mocks__/ChildComponent';
 // @ts-ignore
 config.stubs.transition = false;
 
-let windowSpy;
+let windowSpy: any;
 
 describe('SSR', () => {
   beforeEach(() => {
     windowSpy = jest.spyOn(window, 'window', 'get');
+    // @ts-ignore
     windowSpy.mockImplementation(() => undefined);
   });
 
