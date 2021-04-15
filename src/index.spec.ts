@@ -1,3 +1,4 @@
+/* eslint-disable jest/no-mocks-import */
 import { mount, config } from '@vue/test-utils';
 import Transitiona11y from './index';
 import Child, { TEXT } from './__mocks__/ChildComponent';
@@ -24,7 +25,7 @@ describe('Without reduced motion', () => {
     });
 
     expect(wrapper.is(Child)).toBe(false);
-    expect(wrapper.contains(Child)).toBe(true);
+    expect(wrapper.findComponent(Child).exists()).toBe(true);
     expect(wrapper.props().name).toBe('fade');
     expect(wrapper.text()).toBe(TEXT);
   });
@@ -48,7 +49,7 @@ describe('With reduced motion', () => {
     });
 
     expect(wrapper.props().name).not.toBe('fade');
-    expect(wrapper.is(Child)).toBe(true);
+    expect(wrapper.element.tagName).toBe('SPAN');
     expect(wrapper.text()).toBe(TEXT);
   });
 });

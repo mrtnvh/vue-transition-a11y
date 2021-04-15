@@ -1,5 +1,7 @@
 {
-  "roots": ["<rootDir>/src"],
+  "roots": [
+    "<rootDir>/src"
+  ],
   "transform": {
     "^.+\\.tsx?$": "ts-jest"
   },
@@ -14,7 +16,7 @@
   },
   "globals": {
     "ts-jest": {
-      "tsConfig": "tsconfig.base.json"
+      "tsconfig": "tsconfig.base.json"
     }
   }
 }
