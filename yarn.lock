@@ -1724,10 +1724,10 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
-"@types/jest@26.0.22":
-  version "26.0.22"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-26.0.22.tgz#8308a1debdf1b807aa47be2838acdcd91e88fbe6"
-  integrity sha512-eeWwWjlqxvBxc4oQdkueW5OF/gtfSceKk4OnOAGlUSwS/liBRtZppbJuz1YkgbrbfGOoeBHun9fOvXnjNwrSOw==
+"@types/jest@26.0.23":
+  version "26.0.23"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-26.0.23.tgz#a1b7eab3c503b80451d019efb588ec63522ee4e7"
+  integrity sha512-ZHLmWMJ9jJ9PTiT58juykZpL7KjwJywFN3Rr2pTSkyQfydf/rk22yS7W8p5DaVUMQ2BQC7oYiU3FjbTM/mYrOA==
   dependencies:
     jest-diff "^26.0.0"
     pretty-format "^26.0.0"
@@ -1956,18 +1956,18 @@
     "@typescript-eslint/types" "4.22.0"
     eslint-visitor-keys "^2.0.0"
 
-"@vue/server-test-utils@1.1.4":
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/@vue/server-test-utils/-/server-test-utils-1.1.4.tgz#5053245449635831e1bfd9893491545db722b3ba"
-  integrity sha512-sMT6FFL7E1L8UXmf25URFTA290+ADQ/DOC3pt5Kqgq1UzgIbkKfR3XXtkyMCvbgPaQXjySnlDdDQaEeD5lDV2g==
+"@vue/server-test-utils@1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@vue/server-test-utils/-/server-test-utils-1.2.0.tgz#7c5f1e99a1e8a45ff7c5ed9a3ea836e06e48be17"
+  integrity sha512-G9JdAl6kJAuZpRVx/7ATvhS4Eu5HyCHVIcpabtrm0Rmlcuc6EKSvzEYLwF8iLOWjl4KBWgG0l4aDZEL7UzuTbw==
   dependencies:
     "@types/cheerio" "^0.22.10"
     cheerio "^1.0.0-rc.2"
 
-"@vue/test-utils@1.1.4":
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/@vue/test-utils/-/test-utils-1.1.4.tgz#a9acb32ea1fa4535b2e1ce5ca100bceb4fade2db"
-  integrity sha512-9BeL8IqGvJKy553lq/07rhYURQkpS/k+j19rJ/4eDpGJk7z872M0YrBWFhjS14yMKlvYVYOCfWnVIXyrAx0xNw==
+"@vue/test-utils@1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@vue/test-utils/-/test-utils-1.2.0.tgz#3bc8c17ed549157275f0aec6b95da40887f7297f"
+  integrity sha512-poBTLqeJYNq1TXVhtVfnY8vELUVOFdJY8KZZoUuaAkIqPTWsxonU1M8nMWpZT+xEMrM+49+YcuEqtMHVD9Q9gw==
   dependencies:
     dom-event-types "^1.0.0"
     lodash "^4.17.15"
